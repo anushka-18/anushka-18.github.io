@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anushka Singh - Software Engineer</title>
+    <title>Anushka Singh</title>
     <style>
         * {
             margin: 0;
@@ -13,39 +13,37 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-            line-height: 1.6;
+            line-height: 1.7;
             color: #333;
-            max-width: 800px;
+            max-width: 720px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 60px 20px;
         }
 
         header {
-            text-align: center;
-            margin-bottom: 50px;
-            padding-bottom: 30px;
-            border-bottom: 1px solid #eee;
+            margin-bottom: 60px;
         }
 
         h1 {
-            font-size: 2.5em;
+            font-size: 2.2em;
             font-weight: 600;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
-        .subtitle {
+        .tagline {
             color: #666;
-            font-size: 1.2em;
+            font-size: 1.1em;
+            margin-bottom: 20px;
         }
 
         .links {
-            margin-top: 20px;
+            margin-top: 15px;
         }
 
         .links a {
             color: #0066cc;
             text-decoration: none;
-            margin: 0 15px;
+            margin-right: 20px;
         }
 
         .links a:hover {
@@ -53,100 +51,96 @@
         }
 
         section {
-            margin-bottom: 40px;
+            margin-bottom: 50px;
         }
 
         h2 {
-            font-size: 1.5em;
+            font-size: 1.3em;
             font-weight: 600;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             color: #222;
         }
 
-        .experience-item {
-            margin-bottom: 25px;
-        }
-
-        .company {
-            font-weight: 600;
-            font-size: 1.1em;
-        }
-
-        .role {
-            color: #555;
-        }
-
-        .date {
-            color: #888;
-            font-size: 0.9em;
-        }
-
-        .description {
-            margin-top: 8px;
+        p {
+            margin-bottom: 15px;
             color: #444;
         }
 
-        .description ul {
-            margin-left: 20px;
-            margin-top: 5px;
+        .highlight {
+            background: linear-gradient(120deg, #fff3cd 0%, #fff3cd 100%);
+            padding: 0 3px;
         }
 
-        .description li {
-            margin-bottom: 5px;
+        .work-item {
+            margin-bottom: 30px;
+            padding-left: 15px;
+            border-left: 2px solid #eee;
         }
 
-        .skills-list {
+        .work-item:hover {
+            border-left-color: #0066cc;
+        }
+
+        .company-name {
+            font-weight: 600;
+            font-size: 1.05em;
+        }
+
+        .work-meta {
+            color: #888;
+            font-size: 0.9em;
+            margin-bottom: 8px;
+        }
+
+        .work-description {
+            color: #555;
+        }
+
+        .interests-list {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 8px;
+            margin-top: 10px;
         }
 
-        .skill {
-            background: #f5f5f5;
-            padding: 8px 16px;
-            border-radius: 4px;
+        .interest {
+            background: #f8f8f8;
+            padding: 6px 14px;
+            border-radius: 20px;
             font-size: 0.9em;
-        }
-
-        .education-item {
-            margin-bottom: 15px;
-        }
-
-        .school {
-            font-weight: 600;
-        }
-
-        .degree {
             color: #555;
         }
 
         footer {
-            text-align: center;
+            margin-top: 60px;
             padding-top: 30px;
             border-top: 1px solid #eee;
             color: #888;
+            font-size: 0.95em;
         }
 
-        .contact-links {
-            margin-top: 15px;
-        }
-
-        .contact-links a {
+        footer a {
             color: #0066cc;
             text-decoration: none;
-            margin: 0 10px;
         }
 
-        .highlight {
-            color: #0066cc;
-            font-weight: 500;
+        .cta {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .cta-title {
+            font-weight: 600;
+            margin-bottom: 10px;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Anushka Singh</h1>
-        <p class="subtitle">Software Engineer at Goldman Sachs</p>
+        <h1>Hi, I'm Anushka</h1>
+        <p class="tagline">Software Engineer building fintech products in NYC</p>
         <div class="links">
             <a href="https://linkedin.com/in/anushka-singh97" target="_blank">LinkedIn</a>
             <a href="mailto:anushkasingh1808@gmail.com">Email</a>
@@ -155,110 +149,96 @@
     </header>
 
     <section id="about">
-        <h2>About</h2>
+        <h2>About Me</h2>
         <p>
-            I'm a software engineer with <span class="highlight">5+ years of experience</span> building scalable backend systems
-            and trading platforms. Currently at Goldman Sachs in NYC, I work on high-traffic trading systems
-            that handle <span class="highlight">billions of dollars in daily volume</span>. I'm passionate about distributed systems,
-            fintech, and building reliable infrastructure at scale.
+            I'm a software engineer who loves building <span class="highlight">products that users actually interact with</span>.
+            For the past 5+ years, I've been working in fintech - first at Airtel Payments Bank building mobile banking
+            features for millions of users in India, and now at Goldman Sachs working on trading platforms.
+        </p>
+        <p>
+            What gets me excited? Taking a complex problem, figuring out the right solution, and shipping something
+            that makes a real difference in people's lives. Whether it's a payment flow that just works, or a feature
+            that saves traders hours of manual work - I care about the impact, not just the code.
+        </p>
+        <p>
+            I studied at <strong>University of Washington</strong> (MS) and <strong>Delhi Technological University</strong> (BTech),
+            and I've been lucky to work with some incredibly smart people who've pushed me to grow.
         </p>
     </section>
 
-    <section id="experience">
-        <h2>Experience</h2>
+    <section id="work">
+        <h2>What I've Been Working On</h2>
 
-        <div class="experience-item">
-            <div class="company">Goldman Sachs</div>
-            <div class="role">Associate (Software Engineer)</div>
-            <div class="date">January 2024 - Present | New York, NY</div>
-            <div class="description">
-                <ul>
-                    <li>Engineered scalable, distributed systems by designing backend services in Java for high-traffic trading operations</li>
-                    <li>Led design and deployment of AWS S3 storage for EOD trading data, reducing storage costs by 35%</li>
-                    <li>Improved API performance by implementing concurrency, cutting average response time by 60%</li>
-                    <li>Built trade surveillance systems to detect spoofing, ensuring compliance</li>
-                </ul>
-            </div>
+        <div class="work-item">
+            <div class="company-name">Goldman Sachs</div>
+            <div class="work-meta">Associate, Software Engineer | NYC | 2021 - Present</div>
+            <p class="work-description">
+                Building trading platform features in the Consumer & Wealth Management division.
+                I've worked on everything from designing storage architecture that cut costs by 35%,
+                to optimizing APIs that traders rely on every day, to building compliance systems
+                that detect market manipulation. Also had the chance to mentor interns and help
+                ship features they built.
+            </p>
         </div>
 
-        <div class="experience-item">
-            <div class="company">Goldman Sachs</div>
-            <div class="role">Analyst (Software Engineer)</div>
-            <div class="date">April 2021 - December 2023 | New York, NY & Bengaluru, India</div>
-            <div class="description">
-                <ul>
-                    <li>Worked on Asset Management Trading Platform handling 5-10B USD/day in trade volume</li>
-                    <li>Migrated FIX Engine modules to Java Slang Interface (JSI)</li>
-                    <li>Developed critical features for Apple Cards within the Marcus platform</li>
-                    <li>Modularized core micro-services using Java, MongoDB, and Spring Boot</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="experience-item">
-            <div class="company">Airtel Payments Bank</div>
-            <div class="role">Software Development Engineer</div>
-            <div class="date">June 2019 - April 2021 | Gurugram, India</div>
-            <div class="description">
-                <ul>
-                    <li>Developed scalable micro-services supporting ~10k new user onboarding daily</li>
-                    <li>Designed high-performance APIs with &lt;10ms response time and 500 TPS throughput</li>
-                    <li>Built customer journey analytics using Oracle DB and ElasticSearch</li>
-                </ul>
-            </div>
+        <div class="work-item">
+            <div class="company-name">Airtel Payments Bank</div>
+            <div class="work-meta">Software Development Engineer | India | 2019 - 2021</div>
+            <p class="work-description">
+                This is where I fell in love with fintech. Built the backend services that onboarded
+                ~10,000 new users every day. Worked on payment flows, customer journey analytics,
+                and high-performance APIs. There's something special about building products that
+                help people access financial services for the first time.
+            </p>
         </div>
     </section>
 
-    <section id="skills">
-        <h2>Skills</h2>
-        <div class="skills-list">
-            <span class="skill">Java</span>
-            <span class="skill">Spring Boot</span>
-            <span class="skill">AWS</span>
-            <span class="skill">Kafka</span>
-            <span class="skill">SQL</span>
-            <span class="skill">MongoDB</span>
-            <span class="skill">Aerospike</span>
-            <span class="skill">REST APIs</span>
-            <span class="skill">Git</span>
-            <span class="skill">Python</span>
-            <span class="skill">C++</span>
-            <span class="skill">JUnit</span>
+    <section id="interests">
+        <h2>What I'm Into</h2>
+        <p>
+            Technically, I enjoy working with Java, Spring Boot, AWS, and building systems that need to be
+            fast and reliable. But more than any specific technology, I care about working on products
+            where I can see the direct impact of what I build.
+        </p>
+        <div class="interests-list">
+            <span class="interest">Fintech</span>
+            <span class="interest">User-Facing Products</span>
+            <span class="interest">Payments</span>
+            <span class="interest">API Design</span>
+            <span class="interest">System Design</span>
         </div>
     </section>
 
-    <section id="education">
-        <h2>Education</h2>
+    <section id="looking-for">
+        <h2>What I'm Looking For</h2>
+        <p>
+            I'm exploring new opportunities at <span class="highlight">tech-first companies</span> where engineering
+            excellence matters. I want to work somewhere with a strong technical culture, meaningful products,
+            and a sustainable pace - places like Stripe, Airbnb, Databricks, or similar companies where
+            "how we build" is as important as "what we build."
+        </p>
+        <p>
+            I'm based in NYC and open to SF Bay Area, Seattle, or Boston. Ideally looking for roles
+            where I can work on user-facing features in fintech, payments, or developer tools.
+        </p>
 
-        <div class="education-item">
-            <div class="school">University of Washington</div>
-            <div class="degree">Master's Degree</div>
-        </div>
-
-        <div class="education-item">
-            <div class="school">Delhi Technological University (DTU)</div>
-            <div class="degree">Bachelor of Technology</div>
-        </div>
-    </section>
-
-    <section id="research">
-        <h2>Research</h2>
-        <div class="experience-item">
-            <div class="company">Encoding Context in Task-Oriented Dialogue Systems</div>
-            <div class="role">Using Intent, Dialogue Acts, and Slots</div>
-            <div class="description">
-                <p>Co-authored research on dialogue act classification for chatbot conversations using bidirectional RNN with LSTM and CRF layers.</p>
-            </div>
+        <div class="cta">
+            <div class="cta-title">Let's chat!</div>
+            <p style="margin-bottom: 0;">
+                If you're working on something interesting, I'd love to hear about it.
+                Reach out on <a href="https://linkedin.com/in/anushka-singh97" target="_blank">LinkedIn</a>
+                or <a href="mailto:anushkasingh1808@gmail.com">email me</a>.
+            </p>
         </div>
     </section>
 
     <footer>
-        <p>Looking for SWE opportunities in backend systems and trading platforms.</p>
-        <div class="contact-links">
-            <a href="https://linkedin.com/in/anushka-singh97" target="_blank">LinkedIn</a>
-            <a href="mailto:anushkasingh1808@gmail.com">Email</a>
+        <p>Anushka Singh | NYC</p>
+        <p style="margin-top: 5px;">
+            <a href="https://linkedin.com/in/anushka-singh97" target="_blank">LinkedIn</a> ·
+            <a href="mailto:anushkasingh1808@gmail.com">Email</a> ·
             <a href="assets/Anushka_Singh_Resume.pdf" target="_blank">Resume</a>
-        </div>
+        </p>
     </footer>
 </body>
 </html>
