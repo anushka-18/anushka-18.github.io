@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Allocation System | Anushka Singh</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.7;
+            color: #333;
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        a { color: #0066cc; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .back-link { margin-bottom: 40px; display: block; }
+        h1 { font-size: 1.8em; font-weight: 600; margin-bottom: 8px; }
+        .meta { color: #666; margin-bottom: 30px; }
+        h2 { font-size: 1.2em; font-weight: 600; margin: 30px 0 15px; color: #222; }
+        p { margin-bottom: 15px; color: #444; }
+        ul { margin-left: 20px; margin-bottom: 15px; color: #444; }
+        li { margin-bottom: 8px; }
+        .highlight { font-weight: 600; color: #222; }
+        .impact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 20px 0; }
+        .impact-item { background: #f8f8f8; padding: 15px; border-radius: 8px; }
+        .impact-label { font-size: 0.85em; color: #666; margin-bottom: 4px; }
+        .impact-value { font-weight: 600; color: #222; }
+        .section { margin-bottom: 35px; }
+    </style>
+</head>
+<body>
+    <a href="../" class="back-link">&larr; Back to home</a>
+
+    <h1>Order Allocation Merging & Splitting System</h1>
+    <p class="meta">Goldman Sachs | 2024</p>
+
+    <div class="section">
+        <h2>The Problem</h2>
+        <p>
+            Traders needed to merge and split order allocations — a capability previously handled by an
+            external system costing <span class="highlight">millions in licensing fees</span>. The order graph
+            (parent orders, allocations, placements, executions) is extremely sensitive: any error in ID
+            linkages or quantities could result in multi-million dollar discrepancies per trade.
+        </p>
+        <p>The external system's license was up for renewal. We had a tight deadline to build this in-house or pay up.</p>
+    </div>
+
+    <div class="section">
+        <h2>What I Built</h2>
+        <p>I designed and implemented the entire merging/splitting system end-to-end:</p>
+
+        <p><strong>Core Order Graph Logic</strong></p>
+        <ul>
+            <li>Maintained correct ID linkages across parent orders, allocations, placements, and executions</li>
+            <li>Handled both "merge with executions" and "merge without" scenarios</li>
+            <li>Re-ran fair allocation algorithms to correctly distribute executed quantities</li>
+        </ul>
+
+        <p><strong>Event Serialization & Race Conditions</strong></p>
+        <ul>
+            <li>Events are serialized by order ID, but merging creates new IDs</li>
+            <li>Updated FIX engine cache to always fetch latest parent order ID from DB</li>
+            <li>Handled race conditions where external responses arrive mid-merge</li>
+        </ul>
+
+        <p><strong>Upstream/Downstream Integration</strong></p>
+        <ul>
+            <li>Propagated updates to planning, bookkeeping, and position systems</li>
+            <li>Ensured external systems received correct data despite not understanding new order shape</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Impact</h2>
+        <div class="impact-grid">
+            <div class="impact-item">
+                <div class="impact-label">Cost Savings</div>
+                <div class="impact-value">Millions in licensing fees eliminated</div>
+            </div>
+            <div class="impact-item">
+                <div class="impact-label">Users</div>
+                <div class="impact-value">~15 traders across multiple regions</div>
+            </div>
+            <div class="impact-item">
+                <div class="impact-label">Volume</div>
+                <div class="impact-value">700-1,300 trades/day</div>
+            </div>
+            <div class="impact-item">
+                <div class="impact-label">Quality</div>
+                <div class="impact-value">Zero P&L impact post-launch</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Why This Was Hard</h2>
+        <ul>
+            <li><strong>Financial Risk</strong> — Wrong linkages = billions in exposure</li>
+            <li><strong>Timing Complexity</strong> — Race conditions between merges and external executions</li>
+            <li><strong>Legacy Integration</strong> — External systems didn't understand the new order shape</li>
+            <li><strong>Tight Deadline</strong> — License renewal date was fixed</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>My Role</h2>
+        <p>
+            <strong>Full ownership.</strong> I designed, implemented, tested, and integrated the entire system —
+            core logic, upstream/downstream systems, validations, error handling, and rollout coordination.
+        </p>
+    </div>
+</body>
+</html>

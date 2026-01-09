@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AWS Cloud Storage Architecture | Anushka Singh</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.7;
+            color: #333;
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        a { color: #0066cc; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .back-link { margin-bottom: 40px; display: block; }
+        h1 { font-size: 1.8em; font-weight: 600; margin-bottom: 8px; }
+        .meta { color: #666; margin-bottom: 30px; }
+        h2 { font-size: 1.2em; font-weight: 600; margin: 30px 0 15px; color: #222; }
+        p { margin-bottom: 15px; color: #444; }
+        ul { margin-left: 20px; margin-bottom: 15px; color: #444; }
+        li { margin-bottom: 8px; }
+        .highlight { font-weight: 600; color: #222; }
+        .impact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 20px 0; }
+        .impact-item { background: #f8f8f8; padding: 15px; border-radius: 8px; }
+        .impact-label { font-size: 0.85em; color: #666; margin-bottom: 4px; }
+        .impact-value { font-weight: 600; color: #222; }
+        .section { margin-bottom: 35px; }
+    </style>
+</head>
+<body>
+    <a href="../" class="back-link">&larr; Back to home</a>
+
+    <h1>AWS End-of-Day Trading Data Storage</h1>
+    <p class="meta">Goldman Sachs | 2024</p>
+
+    <div class="section">
+        <h2>The Problem</h2>
+        <p>
+            Compliance required collecting end-of-day trading data from <span class="highlight">15 external
+            trading platforms</span> for internal trade spoofing surveillance, books and records retention,
+            and external audits (including FRB reviews).
+        </p>
+        <p>
+            The data needed to be immutable, encrypted, auditable, and cost-effective for permanent storage.
+            Legacy on-prem solutions were expensive and operationally rigid.
+        </p>
+        <p>This was the <span class="highlight">team's first cloud deployment</span> — no existing playbook.</p>
+    </div>
+
+    <div class="section">
+        <h2>What I Built</h2>
+        <p>I owned the architecture decision (S3 vs SingleStore vs on-prem) and implemented the entire solution:</p>
+
+        <p><strong>Secure Data Ingestion</strong></p>
+        <ul>
+            <li>SFTP pipelines from 15 external platforms</li>
+            <li>Dual authentication: username/password + RSA key-based</li>
+            <li>Retry mechanisms, alerting, and support escalation for vendor outages</li>
+            <li>Multipart uploads for reliable S3 ingestion</li>
+        </ul>
+
+        <p><strong>Compliant Storage</strong></p>
+        <ul>
+            <li>AWS S3 with ARN-controlled access policies (least privilege)</li>
+            <li>Immutable storage guarantees — no modification of historical data</li>
+            <li>Encryption in transit (SFTP) and at rest (S3)</li>
+            <li>Audit logging for compliance reviews and external auditors</li>
+        </ul>
+
+        <p><strong>Cost Optimization</strong></p>
+        <ul>
+            <li>Lifecycle policies to transition data to Glacier after 15 days</li>
+            <li>35% permanent cost reduction vs on-prem</li>
+        </ul>
+
+        <p><strong>Infrastructure as Code</strong></p>
+        <ul>
+            <li>Deployed entire solution via IaC: S3 buckets, lifecycle rules, access policies, SFTP config, encryption, monitoring</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Impact</h2>
+        <div class="impact-grid">
+            <div class="impact-item">
+                <div class="impact-label">Cost Savings</div>
+                <div class="impact-value">35% reduction vs on-prem</div>
+            </div>
+            <div class="impact-item">
+                <div class="impact-label">Compliance</div>
+                <div class="impact-value">Passed FRB audit requirements</div>
+            </div>
+            <div class="impact-item">
+                <div class="impact-label">Scale</div>
+                <div class="impact-value">15 platforms, ~15 files/day</div>
+            </div>
+            <div class="impact-item">
+                <div class="impact-label">Reliability</div>
+                <div class="impact-value">Automated retry & alerting</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Why This Was Hard</h2>
+        <ul>
+            <li><strong>First Cloud Deployment</strong> — Required multiple PoCs, architecture reviews, security sign-offs</li>
+            <li><strong>Compliance Constraints</strong> — Immutability, encryption, auditability all mandatory</li>
+            <li><strong>Cross-Team Coordination</strong> — Worked with compliance, infrastructure, and 15 external vendors</li>
+            <li><strong>Architecture Decision</strong> — Evaluated S3 vs SingleStore vs on-prem on cost, scalability, and compliance</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>My Role</h2>
+        <p>
+            <strong>Full ownership.</strong> I made the architecture decision, implemented all S3 policies,
+            lifecycle rules, SFTP setup, and IaC. Coordinated with compliance, infra teams, and external vendors.
+        </p>
+    </div>
+</body>
+</html>
