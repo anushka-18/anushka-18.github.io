@@ -140,7 +140,8 @@
     <section id="about">
         <h2>About Me</h2>
         <p>
-            I'm a software engineer who loves building <span class="highlight">products that users actually interact with</span>.
+            I'm a software engineer who takes full ownership of hard problems — from architecture
+            decisions to production rollout. I love building <span class="highlight">products that users actually interact with</span>.
             For the past 5+ years, I've been working in fintech - first at Airtel Payments Bank building mobile banking
             features for millions of users in India, and now at Goldman Sachs working on trading platforms.
         </p>
@@ -162,11 +163,11 @@
             <div class="company-name">Goldman Sachs</div>
             <div class="work-meta">Associate, Software Engineer | NYC | Apr 2023 - Present</div>
             <p class="work-description">
-                Building trading platform features for the equities desk.
-                I've worked on everything from designing storage architecture that cut costs by 35%,
-                to optimizing APIs that traders rely on every day, to building compliance systems
-                for trade surveillance. Also had the chance to mentor interns and help
-                ship features they built.
+                Building trading platform features for the equities desk with full ownership
+                from design through production. Solved complex concurrency problems (race conditions,
+                event serialization) in systems handling thousands of trades daily. Led cross-functional
+                work spanning compliance, infrastructure, and 15 external vendors. Mentored 5 interns
+                through full dev lifecycle, shipping features now used daily by traders.
             </p>
         </div>
 
@@ -184,11 +185,10 @@
             <div class="company-name">Airtel Payments Bank</div>
             <div class="work-meta">Software Development Engineer | India | 2019 - 2021</div>
             <p class="work-description">
-                This is where I fell in love with building products at scale. Fintech in India was
-                an emerging market, and I got to be part of that story - building backend services
-                that onboarded ~10,000 new users every day. Worked on payment flows, customer journey
-                analytics, and high-performance APIs. There's something special about building products
-                that help people access services for the first time.
+                This is where I fell in love with building products at scale. Built backend services
+                that onboarded ~10,000 new users/day with fault-tolerant patterns (Kafka retry queues,
+                idempotent operations). Achieved &lt;10ms API response times at 500 TPS. Owned customer
+                journey analytics that identified and fixed onboarding bottlenecks, reducing drop-off rates.
             </p>
         </div>
     </section>
@@ -200,10 +200,10 @@
             <div class="company-name">Order Allocation Merging & Splitting System</div>
             <div class="work-meta">Goldman Sachs | 2024 | <a href="projects/order-merging.html">Read more &rarr;</a></div>
             <p class="work-description">
-                Designed and built end-to-end system to merge and split order allocations, eliminating
-                millions in external licensing fees. Handled complex order graph logic, race conditions
-                with external executions, and integration with upstream/downstream systems.
-                <strong>Full ownership</strong> from design through rollout.
+                <strong>Full ownership</strong> of end-to-end system eliminating millions in licensing fees. Solved
+                concurrency challenges (race conditions with external executions, event serialization
+                across ID changes). Integrated with planning, bookkeeping, and position systems.
+                Zero P&L impact post-launch across thousands of daily trades.
             </p>
         </div>
 
@@ -211,9 +211,9 @@
             <div class="company-name">AWS Cloud Storage Architecture</div>
             <div class="work-meta">Goldman Sachs | 2024 | <a href="projects/aws-storage.html">Read more &rarr;</a></div>
             <p class="work-description">
-                Architected team's first cloud deployment for compliance-mandated trade surveillance data.
-                Leveraged S3 with lifecycle policies, reducing storage costs by 35% vs on-prem.
-                Passed FRB audit requirements.
+                Led team's first cloud deployment with no existing playbook. Owned architecture decision
+                (evaluated S3 vs SingleStore vs on-prem), implemented IaC for entire solution, and
+                coordinated with compliance, infra teams, and 15 external vendors. 35% cost reduction. Passed FRB audit.
             </p>
         </div>
     </section>
